@@ -1,48 +1,38 @@
-# 🌿 Simple Todo API
+# todo-api
 
-A RESTful Todo List API built with **Spring Boot**.  
-My first step towards becoming a backend engineer and move to Norway 🇳🇴
+A RESTful Todo API on Spring Boot with in-memory storage. My first REST API —
+built to learn HTTP, controllers, and JSON serialization.
 
-## ✨ Features
+## Endpoints
 
-- Create, read, update (complete), delete todos
-- In-memory storage (no database required)
-- Full CRUD operations
-- Proper HTTP status codes and error handling
+| Method | Endpoint                    | Description       |
+|--------|-----------------------------|-------------------|
+| GET    | `/api/todo`                 | Get all todos     |
+| POST   | `/api/todo`                 | Create a todo     |
+| GET    | `/api/todo/{id}`            | Get todo by ID    |
+| PATCH  | `/api/todo/{id}/complete`   | Mark as completed |
+| DELETE | `/api/todo/{id}`            | Delete todo by ID |
 
-## 🚀 Getting Started
+## Run
 
-### Prerequisites
-- Java 17+
-- Maven
+Requires Java 17+.
 
-### Run the application
 ```bash
 ./mvnw spring-boot:run
 ```
 
-### API Endpoints
+Example:
 
-| Method | Endpoint               | Description                     |
-|--------|------------------------|---------------------------------|
-| GET    | `/api/todo`            | Get all todos                   |
-| POST   | `/api/todo`            | Create a new todo               |
-| GET    | `/api/todo/{id}`       | Get todo by ID                  |
-| PATCH  | `/api/todo/{id}/complete` | Mark todo as completed       |
-| DELETE | `/api/todo/{id}`       | Delete todo by ID               |
-
-### Example: Create a todo
 ```bash
 curl -X POST http://localhost:8080/api/todo \
   -H "Content-Type: application/json" \
-  -d '{"title":"Learn Java for Norway"}'
+  -d '{"title":"Write a test"}'
 ```
 
-## 🛠️ Built With
-- Java 17
-- Spring Boot 3.5.6
-- Maven
+## Stack
 
-## 💚 Author
-Vyacheslav Nuykin — [GitHub](https://github.com/vyacheslav-nuykin)  
-*Building my future, one line of code at a time.*
+Java 17 · Spring Boot 3 · Maven
+
+## License
+
+See [LICENSE](LICENSE).
